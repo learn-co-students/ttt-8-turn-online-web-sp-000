@@ -7,19 +7,11 @@ def display_board(board)
 end
 
 def valid_move?(board, index)
-  if position_taken?(board, index) == false && index.between?(0, 8)
-    true
-  else
-    false
-  end
+  !position_taken?(board, index) && index.between?(0, 8)
 end
 
 def position_taken?(board, index)
-  if board[index] == " " || board[index] == "" || board[index] == nil
-    false
-  else 
-    true
-  end
+  board[index] != " " && board[index] != "" && board[index] != nil
 end
 
 def input_to_index(user_input)
@@ -40,11 +32,3 @@ def turn(board)
   end
   display_board(board)
 end
-
-
-
-
-
-
-
-
