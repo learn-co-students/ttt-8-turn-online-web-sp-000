@@ -1,11 +1,9 @@
 #!/usr/bin/env ruby
+
+require_relative '../lib/turn'
+
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
 puts "Welcome to Tic Tac Toe!"
 display_board(board)
-puts "Where would you like to go?"
-
-user_input = gets.strip               #get input and strip out whitespaces on the string
-index = input_to_index(user_input)    #define index locally   
-move(board,index,value = "X")         #move function call, set default value variable
-display_board(board)                  #display changed board
+turn(board)

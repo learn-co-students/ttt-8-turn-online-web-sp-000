@@ -24,3 +24,16 @@ end
 def move (board,index,value = "X")
 board[index] = value                   #set the value of the board's index to X
 end
+
+def turn(board)
+puts "Please Enter 1-9:"
+user_input = gets.strip 
+input_to_index(user_input)
+if valid_move?(board,index) || !position_taken?(board,index)
+  move(board,index,value = "X")         #move function call, set default value variable
+  display_board(board)                  #display changed board
+else
+  puts "Please enter a valid input"
+  turn(board)
+end
+end
