@@ -11,12 +11,14 @@ input = gets.strip
 
 index = input_to_index(input)
 
-valid_move?(board, index) ### calls position_taken?
-
-#move(board, index, character = "X")
-
-display_board(board)
-  
+if valid_move?(board, index)
+  move(board, index)
+ 
+else
+  puts "sorry invalid move, try again"
+  turn(board)
+end
+ display_board(board) 
 end
 
 
@@ -41,9 +43,9 @@ end
 
 def valid_move?(board, index)
   if position_taken?(board, index) && index.between?(0,8)
-    move(board, index)
+    true
  else
-    turn(board) 
+    false
   end
 
 end
