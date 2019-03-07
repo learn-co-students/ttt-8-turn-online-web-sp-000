@@ -1,1 +1,6 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+board = [" ", " "," ", " "," ", " "," ", " "," "]
+turn(board)
+index = input_to_index(index)
+printThis = valid_move?(board,index)
