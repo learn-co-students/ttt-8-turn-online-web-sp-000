@@ -56,10 +56,14 @@ describe './lib/turn.rb' do
       index = 0
       expect(valid_move?(board, index)).to be_truthy
 
-      index = 4
-      expect(valid_move?(board, index)).to be_falsey
 
       index = -1
+      expect(valid_move?(board, index)).to be_falsey
+    end
+    it 'returns false when spot is taken' do
+      board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
+      
+      index = 4
       expect(valid_move?(board, index)).to be_falsey
     end
   end
