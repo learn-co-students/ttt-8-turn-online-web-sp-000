@@ -1,1 +1,9 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn.rb'
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+# CLI for a single turn of Tic Tac Toe
+puts "Welcome to Tic Tac Toe!"
+
+turn(board)
