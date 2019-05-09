@@ -45,11 +45,17 @@ end
 
 
 def turn(board)
-  puts "Please enter 1-9:"
-  input = gets
-  value = input
-  input_to_index(value)
-  if valid_move?(board, index)
+  valid_move_made = false
+  
+  until valid_move_made do
+    puts "Please enter 1-9:"
+    
+    move_index = input_to_index(gets)
+    
+    if valid_move?(board, move_index)
+      display_board(move(board, move_index))
+      valid_move_made = true
+    end
   end
 end
 
