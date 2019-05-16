@@ -7,8 +7,8 @@ def display_board(board)
 end
 
 def input_to_index(user_input)
-   user_input.to_i - 1               #this here converts a user_input to integer, subtracts 1, and returns -1 for strings without integers
-end                                 #sets it to variable index
+   index = user_input.to_i - 1               #this here converts a user_input to integer, subtracts 1, and returns -1 for strings without integers
+end                                         #sets it to variable index, don't have to set to variable. but I did
 
 def valid_move?(board, index)
   if index.between?(0,8) #if index is within available positions on board
@@ -22,13 +22,13 @@ def turn(board)
 
   puts "Please enter 1-9:"
   input = gets.strip                #create local variable 'input' that gets input from player
-  index = input_to_index(input)     #convert input to correct index (#input_to_index(input))
+  index = input_to_index(input)     #convert input to correct index with method call (#input_to_index(input))
 
   if valid_move?(board, index)      #if move is valid (allowed)
-    move(board, index)
-    display_board(board)
+    move(board, index)              #call to #move making user move for index
+    display_board(board)            #show the board
   else
-    turn(board)     #reiterate turn
+    turn(board)                     #reiterate turn if previous turn failed
   end
 end
 
@@ -39,5 +39,5 @@ def position_taken?(board, index)
 end
 
 def move(board, index, value = "X")
-  board[index] = value
+  board[index] = value                #set move on our board equal to a value. Default is X.
 end
