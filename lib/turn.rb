@@ -21,7 +21,7 @@ end
 def turn(board)
 
   puts "Please enter 1-9:"
-  input = gets.strip                #create local variable 'input' that gets input from player
+  input = gets.strip                #create local variable 'input' that gets input from player. 'strip' eliminates whitespace.
   index = input_to_index(input)     #convert input to correct index with method call (#input_to_index(input))
 
   if valid_move?(board, index)      #if move is valid (allowed)
