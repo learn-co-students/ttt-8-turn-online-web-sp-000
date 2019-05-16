@@ -1,9 +1,3 @@
-def turn
-
-  
-end
-
-end
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
@@ -12,20 +6,29 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-def move(board, index, value = "X")
-  board[input_to_index(user_input)] = value #changed from board[index]
-end
-
-def input_to_index(user_input)
+def input_to_index(user_input,)
   index = user_input.to_i - 1       #this here converts a user_input to integer, subtracts 1, and returns -1 for strings without integers
-end
+end                                 #sets it to variable index
 
 def valid_move?(board, index)
-    #re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
-  while(index.to_i.between?(1,9)) #if index is within available positions on board
+  if index.between?(0,8) #if index is within available positions on board
     if !(position_taken?(board,index)) #if our position is not taken (call to our helper method position_taken?)
-      return true                       # return true for valid move
+      true                       # return true for valid move
     end
+  end
+end
+
+def turn(board)
+
+  puts "Enter a number 1-9"
+  input = gets.strip
+  input = input_to_index(input)
+
+  if valid_move?(board, index)      #if move is valid (allowed)
+    move(board, index)
+    display_board(board)
+  else
+    turn(board)     #reiterate turn
   end
 end
 
@@ -37,4 +40,11 @@ def position_taken?(board, index)
   else
     taken = true  #updating variable to index being true or "full"
   end
+end
+
+  # We're accessing our array with board[index]
+  #board[index] != " "    #if index not empty, position is taken
+
+def move(board, index, value = "X")
+  board[index] = value
 end

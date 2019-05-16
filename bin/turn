@@ -6,6 +6,6 @@ board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
 puts  "Welcome to Tic Tac Toe!"
 
-  display_board(board)
+display_board(board)
 
-  name = gets.chomp.strip
+turn(board)
