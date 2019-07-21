@@ -1,1 +1,11 @@
 #!/usr/bin/env ruby
+require_relative "../lib/turn" #allow Ruby to load file (turn.rb) from relative path to current file
+
+#purpose of this file is to execute a turn of tic tac toe
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts  "Welcome to Tic Tac Toe!"
+
+display_board(board)
+
+turn(board)
