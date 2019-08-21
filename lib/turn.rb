@@ -11,25 +11,31 @@ puts " #{board[6]} #{separator} #{board[7]} #{separator} #{board[8]} "
 end
 
 def input_to_index(user_input)
-  user_input.to_i -1
+  user_input.to_i - 1
 end
 
 def move(board, index, current_player = "X")
   board[index] = current_player
 end
 
-def valid_move?(board, index)
-  if position_taken?(board, index) || board[index] == nil
-        return false
-  else
-    return true
-  end
-end
+  def valid_move?(board, index)
+    if !position_taken?(board, index) && index.between?(0,8) || board[index] == nil
+          return true
+    else
+      return false
 
-#def position_taken?(board, index)
-#  if board[index] == " " || board[index] == "" || board[index] == nil
-#      return true
-#    else
-#      return false
-#    end
-#  end
+    end
+  end
+
+  def position_taken?(board, index)
+    if board[index] == " " || board[index] == "" || board[index] == nil
+        return false
+      else
+        return true
+
+      end
+    end
+
+    def turn(board)
+      puts "Please enter 1-9:"
+    end
