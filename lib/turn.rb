@@ -1,4 +1,4 @@
-board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
+board = ["X", "X", "X", "X", "O", "O", "X", "X", "O"]
 def display_board(board)
 separator = "|"
 lines = "-----------"
