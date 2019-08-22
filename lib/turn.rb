@@ -1,4 +1,3 @@
-board = ["X", "X", "X", "X", "O", "O", "X", "X", "O"]
 def display_board(board)
 separator = "|"
 lines = "-----------"
@@ -23,19 +22,26 @@ end
           return true
     else
       return false
-
     end
   end
 
   def position_taken?(board, index)
-    if board[index] == " " || board[index] == "" || board[index] == nil
+    if board[index] == " " || board[index] == "" && index.between?(0,8) || board[index] == nil
         return false
       else
         return true
-
       end
     end
 
     def turn(board)
       puts "Please enter 1-9:"
+      user_input = gets.strip.chomp
+      index = input_to_index(user_input)
+      until valid_move?(board, index)
+        puts "Please enter 1-9:"
+        user_input = gets.strip.chomp
+        index = input_to_index(user_input)
+      end
+      move(board, index)
+      display_board (board)
     end

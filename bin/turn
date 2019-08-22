@@ -1,5 +1,12 @@
 #!/usr/bin/env ruby
-require_relative '../lib/turn.rb'
+require_relative '../lib/turn'
+
+puts "Welcome to Tic Tac Toe!"
+
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-puts Please enter 1-9:
-move (board, 0, X)
+
+puts "Please enter 1-9:"
+
+user_input = gets.strip.chomp
+
+turn (board)
