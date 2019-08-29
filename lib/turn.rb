@@ -6,7 +6,6 @@ def turn(board)
  #   true
  #    else turn(board)
   move(board, user_input, value = "X")
-  turn(board)
  end
 
 def input_to_index(user_input) 
