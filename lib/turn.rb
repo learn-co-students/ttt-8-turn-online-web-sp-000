@@ -35,17 +35,15 @@ def input_to_index(input)
   end
 
 
-
   def move(board, input_to_index, token = "X")
-    return board[input_to_index] == token
-
+    return board[input_to_index] = token
   end
 
 
+  def turn(board)
+   puts "Please enter 1-9:"
+#get input
 
-#  def turn(board)
-#    puts "Please enter 1-9:"
-#    if input_to_index(user_input) == (valid_move? && position_taken? == false)
-#       turn(board)
-#  end
-#  end
+#convert input to index, if index is valid, make the move.
+  
+end
