@@ -9,6 +9,7 @@ def display_board(board)
 end
 
 
+#position_taken encapsulated in valid_move
 def valid_move?(board, index)
 
   def position_taken?(board, index)
@@ -43,7 +44,16 @@ def input_to_index(input)
   def turn(board)
    puts "Please enter 1-9:"
 #get input
+user_input = gets.strip
 
-#convert input to index, if index is valid, make the move.
-  
+#convert input to index
+index = input_to_index(user_input)
+
+#if index is valid, make the move. ask for input again after failed validation
+if valid_move?(board,index)
+move(board, index)
+display_board(board)
+ else
+turn(board)
+end
 end
