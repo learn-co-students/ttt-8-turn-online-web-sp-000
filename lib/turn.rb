@@ -17,13 +17,30 @@ def input_to_index(input)
 end
 
 def valid_move?(board, index)
-  if board[index] == NIL
+  if index == NIL
     FALSE
-  elsif board[index].to_i < 0
-    false
+  elsif index > 9 || index < 0
+    FALSE
   elsif board[index].strip.length != 0
-    false
+    FALSE
   else
-    true
+    TRUE
   end
+end
+
+def move(board, index, letter="X")
+  if valid_move?(board, index)
+    board[index] = letter
+    display_board(board)
+  else
+    puts "Invalid Move"
+    turn(board, letter)
+  end
+end
+
+def turn (board, letter ="X")
+  puts "Please enter 1-9:" 
+  input = gets.chomp
+  index = input_to_index(input)
+  move(board, index, letter)
 end
