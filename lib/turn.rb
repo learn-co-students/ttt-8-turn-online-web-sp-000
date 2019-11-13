@@ -10,3 +10,20 @@ def display_board (board)
     puts row
   end
 end
+
+def input_to_index(input)
+  value = input.to_i
+  user_move_request = value-1
+end
+
+def valid_move?(board, index)
+  if board[index] == NIL
+    FALSE
+  elsif board[index].to_i < 0
+    false
+  elsif board[index].strip.length != 0
+    false
+  else
+    true
+  end
+end
