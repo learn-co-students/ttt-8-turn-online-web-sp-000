@@ -1,1 +1,10 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+
+#must establish the board before beginning in the CLI
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Welcome to Tic Tac Toe"
+display_board(board) #this shows the user the board by referencing the display_board method
+turn(board)
