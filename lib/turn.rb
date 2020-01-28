@@ -27,9 +27,10 @@ def turn(board)
   puts "Please enter 1-9:"
   user_input = gets.chomp.to_i
   index = input_to_index(user_input)
-  while valid_move?(board, index)
-    puts "Please enter 1-9:"
+  if valid_move?(board, index)
+    move(board)
+    display_board(board)
+  else
+    turn(board)
   end
-  move(board)
-  display_board(board)
 end
