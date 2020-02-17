@@ -1,8 +1,7 @@
 def input_to_index(index)
-  index = index.to_i
-  index = index - 1
+  index = index.to_i - 1
   #for testing purposes
-  puts "You have chosen #{index} as your space"
+#  puts "You have chosen #{index} as your space"
   return index
 end
 
@@ -17,14 +16,14 @@ end
 def valid_move?(board, index)
   if (index > 8 || index < 0)
     #for testing purposes
-    puts "Out of range"
+  #  puts "Out of range"
     return false
   else
     if (board[index] == " " || board[index] == "")
       return true
     else
       # for testing purposes
-      puts "Taken space"
+    #  puts "Taken space"
       return false
     end
   end
@@ -37,19 +36,11 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
-  userInput = gets.strip
+  index = gets.strip
   index = input_to_index(index)
   if (valid_move?(board, index))
     move(board, index)
   else
-    loop do
-      puts "Invalid move. Please enter 1-9:"
-      userInput = gets.strip
-      index = input_to_index(index)
-      if (valid_move?(board, index))
-        move(board, index)
-        break
-      end
-    end
+    turn(board)
   end
 end
