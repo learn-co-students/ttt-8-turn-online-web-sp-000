@@ -1,1 +1,22 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Welcome to Tic Tac Toe!"
+puts display_board(board)
+turns = turn
+  if turns == "false" 
+    puts "Invalid choice.  #{turns}"
+  else 
+    puts "Correct Choice. #{turns}"
+    user_input = turns
+    index = input_to_index(user_input)
+    valid_move = valid_move(board, index)
+      if valid_move == "false"
+        puts "Invalid move."
+      else valid_move == "true"
+        move(board, index)
+        puts display_board(board)
+      end 
+end 
