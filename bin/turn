@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require_relative '../lib/turn'
-require_relative '../spec/turn_spec'
+#require_relative '../spec/turn_spec'
 
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
