@@ -18,12 +18,12 @@ end
 
 def valid_move?(board, index)
   if board[index] == " " || board[index] == ""
-      true 
+      return true 
   elsif
       board[index] == "X" || board[index] == "O"
-      false 
+      return false 
   else
-      false
+      return false
   end 
 end
 
@@ -32,9 +32,12 @@ def turn(board)
   user_input = gets.strip
     if  user_input.to_i.between?(1, 9)
       index = input_to_index(user_input)
-      valid_move?(board, index)
-      move(board, index, value = "X")
-      display_board(board)
+      valid_move = valid_move?(board, index)
+        if valid_move == true 
+          move(board, index, value = "X")
+          display_board(board)
+        else 
+        end 
    else
       turn(board)
   end 

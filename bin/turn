@@ -2,6 +2,10 @@
 require_relative '../lib/turn'
 #require_relative '../spec/turn_spec'
 
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+board = [" ", " ", " ", " ", " ", " ", "O", " ", " "]
 
-turn(board)
+count = 0
+until count == 9 do
+  turn(board)
+count += 1
+end 
