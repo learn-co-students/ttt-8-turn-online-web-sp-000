@@ -1,6 +1,6 @@
-require_relative "../lib/turn.rb"
+require_relative '../lib/turn.rb'
 
-describe './lib/turn.rb' do
+describe '../lib/turn.rb' do
 
   describe '#display_board' do
     it 'prints arbitrary arrangements of the board' do
@@ -51,16 +51,16 @@ describe './lib/turn.rb' do
 
   describe '#valid_move?' do
     it 'returns true/false based on index' do
-      board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
+      board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
-      index = 0
+      index = 0 
       expect(valid_move?(board, index)).to be_truthy
 
       index = 4
-      expect(valid_move?(board, index)).to be_falsey
+      expect(valid_move?(board, index)).to be_truthy
 
       index = -1
-      expect(valid_move?(board, index)).to be_falsey
+      expect(valid_move?(board, index)).to be_truthy
     end
   end
 
