@@ -75,7 +75,7 @@ def turn(board)
     move(board, index)
   elsif (valid_move?(board, index) == false)
     puts "This is not a valid move."
-    return false
+    false
     while (turn(board) == false)
       return false
       turn(board)
