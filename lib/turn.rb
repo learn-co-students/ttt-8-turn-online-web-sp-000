@@ -77,7 +77,6 @@ def turn(board)
     puts "This is not a valid move."
     false
     while (turn(board) == false)
-      return false
       turn(board)
     end
   end
