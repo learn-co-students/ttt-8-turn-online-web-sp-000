@@ -1,1 +1,14 @@
 #!/usr/bin/env ruby
+
+require_relative '../lib/turn'
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+#welcome the user
+welcome
+
+#display the board
+display_board(board)
+
+#begin a turn in the game
+turn(board)
