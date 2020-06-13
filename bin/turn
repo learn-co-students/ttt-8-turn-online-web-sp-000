@@ -1,1 +1,7 @@
-#!/usr/bin/env ruby
+require_relative "../lib/turn.rb"
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+user_input = gets.strip
+
+input_to_index
