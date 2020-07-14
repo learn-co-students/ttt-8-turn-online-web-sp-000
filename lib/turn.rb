@@ -3,14 +3,17 @@
 def turn(board)
   # ask the user for input (position 1-9)
   puts "Please enter 1-9:"
+  
+  # get input
   user_input = gets.strip
-  input_to_index(user_input)
+  
+  # calls input to index method
   index = input_to_index(user_input)
   
   # if index is valid
   if valid_move?(board, index)
     # make the move for index
-    move(board, index, character)
+    move(board, index, character = "X")
   
     # show the board
     display_board(board)
@@ -18,17 +21,10 @@ def turn(board)
   # else
   else
     # ask for input again until you get a valid input
-    puts "Please enter 1-9:"
+    turn(board)
 # end
   end
 end
-
-# convert input to index 
-  def input_to_index(user_input)
-    user_input = user_input.to_i
-    new_index = user_input.to_i - 1
-    new_index
-  end
   
 # display_board method
 
@@ -38,6 +34,13 @@ def display_board(board)
   puts " #{board[3]} | #{board[4]} | #{board[5]} "
   puts "-----------"
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
+end
+
+# convert input to index
+
+def input_to_index(user_input)
+  user_input = user_input.to_i
+  user_input.to_i - 1
 end
 
 # valid_move? method
@@ -68,6 +71,6 @@ end
 
 # move method
 
-def move(board, new_index, character = "X")
-  board[new_index] = character
+def move(board, index, character = "X")
+  board[index] = character
 end
