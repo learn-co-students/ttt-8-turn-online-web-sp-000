@@ -17,6 +17,7 @@ def position_taken?(board, index)
     board[index] != " "
 end
 
+
 def valid_move?(board, index)
     #index is within a range of 0-8 And board at index is not occupied
     index.between?(0,8) && !position_taken?(board, index)
