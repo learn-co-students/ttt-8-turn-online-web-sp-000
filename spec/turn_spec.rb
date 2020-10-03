@@ -48,6 +48,21 @@ describe './lib/turn.rb' do
     end
 
   end
+  
+  describe '#position_taken?' do
+    it 'returns true/false based on index' do
+      board = [" ", " ", " ", " ", "X", " ", "O", " ", " "]
+      
+      index = 6
+      expect(position_taken?(board, index)).to be_truthy
+      
+      index = 4
+      expect(position_taken?(board, index)).to be_truthy
+      
+      index = 0
+      expect(position_taken?(board, index)).to be_falsey
+    end
+  end
 
   describe '#valid_move?' do
     it 'returns true/false based on index' do
