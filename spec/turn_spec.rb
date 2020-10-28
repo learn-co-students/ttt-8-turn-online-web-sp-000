@@ -102,7 +102,7 @@ describe './lib/turn.rb' do
 
       expect(self).to receive(:input_to_index).and_call_original
 
-      turn(board)input_to_index(input) 
+      turn(board)
       
     end
 
