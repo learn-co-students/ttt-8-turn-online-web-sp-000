@@ -1,11 +1,11 @@
  
-#def position_taken?(board, index)
-  #if board[index] == " " || board[index] == "" || board[index] == nil 
+def position_taken?(board, index)
+  if board[index] == " " || board[index] == "" || board[index] == nil 
     return false 
   elsif board[index] = "X" || board[index] = "O"
     return false 
- #end
-#end   
+ end
+end   
 
 
 def valid_move?(board, index)
@@ -54,9 +54,6 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
-  input = gets.chomp 
+  input = gets.chomp  
 end  
  
-
-
-  
