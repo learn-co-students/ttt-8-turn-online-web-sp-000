@@ -1,5 +1,5 @@
 def valid_move?(board, index)
-    if index.between?(0,8)  && !position_taken?
+    if index.between?(0,8) && !position_taken?
      return true 
     end 
      position_taken(board, index)
@@ -35,8 +35,6 @@ def input_to_index(input)
   end 
 end   
  
-
-
 
 def move(board, index, value = "X")
   board[index] = value 
