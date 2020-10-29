@@ -1,16 +1,15 @@
 board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
 def valid_move?(board, index)
   index = 0  
-  if index = " " || index = "" || index = nil 
-    return true
-  end 
-   if board[index] = "X" || board[index] = "O" 
-    return false 
-    turn(board) 
-  end  
-  if not index.between?(0,8)
-    return false     
-    turn(board)
+  # if index = " " || index = "" || index = nil
+  #   return true
+  # end 
+  # if board[index] = "X" || board[index] = "O" 
+  #   return false 
+  #   turn(board) 
+  # end  
+  if index.between?(0,8)
+    position_taken?(index) 
    end
 end 
 
@@ -18,14 +17,13 @@ end
 
    
 def position_taken?(index) 
-   if board[index] = " " || board[index] = "" || board[index] = nil 
-     return false  
-  end 
+  # if board[index] = " " || board[index] = "" || #board[index] = nil 
+  #   return false  
+   
   if board[index] = "X" || board[index] = "O"
     return true 
   end 
-end 
- 
+ end 
  
 
  def display_board(board)
@@ -35,7 +33,7 @@ end
   puts "-----------"
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
   end
-  
+   
   
   
   
@@ -46,22 +44,20 @@ def input_to_index(input)
     index = string - 1 
  end 
 end   
-
+ 
 
 
 
 def move(board, index, value = "X")
   board[index] = value 
+  display_board(board)
 end 
 
 
 def turn(board)
-  puts "Please enter 1-9:"
+  puts "Please enter 1-9" 
   input = gets.chomp  
   input_to_index(input)
   valid_move?(board, input) 
-  position_taken?(board, index)
-  move(board, index, value)
-  display_board(board)
-end   
+ end   
  
