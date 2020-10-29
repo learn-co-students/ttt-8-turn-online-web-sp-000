@@ -47,6 +47,6 @@ def turn(board)
   puts "Please enter 1-9" 
   input = gets.chomp  
   input_to_index(input)
-  valid_move?(board, input) 
+  valid_move?(board, index) 
  end   
  
