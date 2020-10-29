@@ -30,9 +30,9 @@ end
 def input_to_index(input) 
   if (1..9).cover?(input)
     puts "invalid" 
-    else string = input.to_i 
+  else string = input.to_i 
     index = string - 1 
- end 
+  end 
 end   
  
 
