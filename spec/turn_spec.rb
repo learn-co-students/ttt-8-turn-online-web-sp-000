@@ -103,6 +103,7 @@ describe './lib/turn.rb' do
       expect(self).to receive(:input_to_index).and_call_original
 
       turn(board)
+      
     end
 
     it 'validates the input correctly' do
