@@ -36,7 +36,10 @@ def turn(board)
 
       index = input_to_index(user_input)
     user_input.to_i-1
-    if index.between?(0,8)
-      !!input_to_index(user_input)
+  if index.between?(0,8)
+    valid_move?(board, 0)
+    position_taken?(board, 0)
+    true
 end
 end
+##!!input_to_index(user_input)
