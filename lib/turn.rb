@@ -27,10 +27,8 @@ def move(board, index, token = "X")
 end
 
 def turn(board)
-  loop do
   puts "Please enter 1-9:"
   user_input = gets.strip
-  if input_to_index == valid_move?
-    break
+  input_to_index(user_input)
+
   end
-end
