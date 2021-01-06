@@ -1,1 +1,13 @@
 #!/usr/bin/env ruby
+
+# first needs to load in our library
+require_relative '../lib/turn'
+
+#defining board variable used in lib/turn
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Welcome to Tic Tac Toe!"
+display_board(board)
+turn(board)
+
+display_board(board)
