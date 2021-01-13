@@ -48,7 +48,7 @@ describe './lib/turn.rb' do
     end
 
   end
-
+  
   describe '#valid_move?' do
     it 'returns true/false based on index' do
       board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
