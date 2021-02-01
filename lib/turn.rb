@@ -45,11 +45,10 @@ def turn(board)
   #capture the users move
   input = gets.strip
   index = input_to_index(input)
-  until valid_move?(board, index) == true
-    puts "Invalid move. Please try again"
-    input = gets.strip
-    input_to_index(input)
+  if valid_move?(board, index) == true
+    move(board, index, value="X")
+    display_board(board)
+  else
+    turn(board)
   end
-  move(board, index, value="X")
-  display_board(board)
 end
