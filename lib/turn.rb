@@ -18,10 +18,10 @@ def position_taken?(board, index, value)
   end
 end
 
-def valid_move?(board, index, value)
+def valid_move?(board, index)
   if (index < 0 || index > 8)
     return false
-  elsif position_taken?(board, index, value)
+  elsif position_taken?(board, index)
     return false
   else
     return true
