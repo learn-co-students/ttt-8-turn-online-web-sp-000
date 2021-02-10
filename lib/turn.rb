@@ -10,7 +10,7 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
-def position_taken?(board, index)
+def position_taken?(board, index, value)
   if (board[index] == " " || board[index] == " " || board[index] == nil)
     return false
   else
@@ -18,10 +18,10 @@ def position_taken?(board, index)
   end
 end
 
-def valid_move?(board, index)
+def valid_move?(board, index, value)
   if (index < 0 || index > 8)
     return false
-  elsif position_taken?(board, index)
+  elsif position_taken?(board, index, value)
     return false
   else
     return true
