@@ -1,1 +1,12 @@
 #!/usr/bin/env ruby
+
+require_relative '../lib/turn'
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Welcome to Tic Tac Toe!"
+display_board(board)
+turn(board)
+turn1 = gets.strip
+move(board, turn1, "X")
+display_board(board)
