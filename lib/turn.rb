@@ -6,8 +6,8 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-def valid_move?(board, move)
-  if !position_taken?(board, move) && move.between?(0, 9)
+def valid_move?(board, index)
+  if !position_taken?(board, index) && index.between?(0, 9)
     true
   else
     false
@@ -21,9 +21,9 @@ end
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
-  input = input_to_index(input)
-  if valid_move?(board, input)
-    move(board, input)
+  index = input_to_index(input)
+  if valid_move?(board, index)
+    move(board, index)
     display_board(board)
   else
     puts "Not a valid entry."
@@ -43,8 +43,8 @@ def input_to_index(input)
   end
 end
 
-def position_taken?(board, move)
-  if board[move] == "" || board[move] == " " || board[move] == nil
+def position_taken?(board, index)
+  if board[index] == "" || board[index] == " " || board[index] == nil
     false
   else
     true
