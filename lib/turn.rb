@@ -14,8 +14,8 @@ def valid_move?(board, index)
   end
 end
 
-def move(board, move, symbol="X")
-  board[move] = symbol
+def move(board, move, current_player = "X")
+  board[move] = current_player
 end
 
 def turn(board)
