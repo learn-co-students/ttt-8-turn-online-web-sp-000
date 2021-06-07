@@ -2,7 +2,7 @@ def turn(board)
   puts "Please enter 1-9"
   input = gets.strip
 
-  input_to_index(input)
+  index = input_to_index(input)
   valid_move?(board, index)
   move(board, index, "X")
   display_board(board)
@@ -17,7 +17,7 @@ def display_board(board)
 end
 
 def input_to_index(input)
-  index = (input.to_i) - 1
+  (input.to_i) - 1
 end
 
 def move(board, index, player_char = "X")
@@ -43,5 +43,3 @@ def position_taken?(board, index)
     return true
   end
 end
-
-
